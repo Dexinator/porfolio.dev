@@ -1,78 +1,312 @@
 {
-    "es": {
-      "projects": {
-        "title": "Proyectos",
-        "items": [
-          {
-            "title": "Portafolio Julia Sánchez",
-            "description": "Desarrollo de portafolio profesional para una coach y emprendedora. El sitio está construido con tecnologías modernas y presenta su trayectoria profesional, servicios y proyectos de manera elegante y profesional.",
-            "link": "https://dex-js.vercel.app/",
-            "github": "https://github.com/Dexinator/dex-js",
-            "image": "/projects/julia.webp",
-            "tags": ["ICASTRO", "TAILWIND", "DOCKER"]
-          },
-          {
-            "title": "Estudio Steam",
-            "description": "Proyecto para un desarrollador de videojuegos para ayudarles a encontrar las tendencias de mercado en la plataforma Steam. Implementado con Python y Pandas, este proyecto ayudó a comprender mejor el comportamiento de los jugadores y las dinámicas del mercado.",
-            "link": "/es/steam",
-            "github": "https://github.com/Dexinator/steam",
-            "image": "/projects/videogames.webp",
-            "tags": ["PYTHON", "PANDAS"]
-          },
-          {
-            "title": "SISTEQ Control",
-            "description": "Fui contratado para realizar un estudio de mercado para la importación de máquinas industriales, específicamente máquinas para desplazamientos de materiales a granel y polvos. Al estudiarse la viabilidad del proyecto se determinaron los precios competitivos y desarrollé el e-commerce.",
-            "link": "https://sisteqcontrol.com",
-            "image": "/projects/sisteq.webp",
-            "tags": ["PYTHON", "PANDAS", "PHP"]
-          },
-          {
-            "title": "Clientes frecuentes Palacio Negro (Móvil)",
-            "description": "Desarrollo para registrar a los clientes del Palacio Negro, y alimentar el funnel de publicidad. Se desarrolló en servidor PHP, utilizando JS y CSS. El almacenamiento está en bases de datos MySQL.",
-            "link": "https://presos.elpalacionegro.com",
-            "github": "https://github.com/Dexinator/presos",
-            "image": "/projects/presos.webp",
-            "tags": ["JS", "MYSQL", "PHP"]
-          }
-        ]
-      }
-    },
-    "en": {
-      "projects": {
-        "title": "Projects",
-        "items": [
-          {
-            "title": "Julia Sánchez Portfolio",
-            "description": "Development of a professional portfolio for a coach and entrepreneur. The site is built with modern technologies and presents her professional journey, services, and projects in an elegant and professional manner.",
-            "link": "https://dex-js.vercel.app/",
-            "github": "https://github.com/Dexinator/DexJS",
-            "image": "/projects/julia.webp",
-            "tags": ["ICASTRO", "TAILWIND", "DOCKER"]
-          },
-          {
-            "title": "Steam Study",
-            "description": "Project for a game developer to help them identify market trends on the Steam platform. Implemented with Python and Pandas, this project helped better understand player behavior and market dynamics.",
-            "link": "/en/steam",
-            "github": "https://github.com/Dexinator/steam",
-            "image": "/projects/videogames.webp",
-            "tags": ["PYTHON", "PANDAS"]
-          },
-          {
-            "title": "SISTEQ Control",
-            "description": "I was hired to conduct a market study for the import of industrial machines, specifically machines for bulk and powder material handling. After studying the project's feasibility, competitive prices were determined, and I developed the e-commerce platform.",
-            "link": "https://sisteqcontrol.com",
-            "image": "/projects/sisteq.webp",
-            "tags": ["PYTHON", "PANDAS", "PHP"]
-          },
-          {
-            "title": "Frequent Customers Palacio Negro (Mobile)",
-            "description": "Development to register Palacio Negro's customers and feed the advertising funnel. Developed on a PHP server, using JS and CSS. Storage is in MySQL databases.",
-            "link": "https://presos.elpalacionegro.com",
-            "github": "https://github.com/Dexinator/presos",
-            "image": "/projects/presos.webp",
-            "tags": ["JS", "MYSQL", "PHP"]
-          }
-        ]
-      }
+  "es": {
+    "projects": {
+      "title": "Proyectos",
+      "featuredTitle": "Proyectos Destacados",
+      "viewAll": "Ver todos los proyectos",
+      "allProjectsUrl": "/es/proyectos",
+      "labels": {
+        "code": "Code",
+        "preview": "Preview",
+        "about": "Acerca de",
+        "selectApp": "Selecciona una app:"
+      },
+      "items": [
+        {
+          "title": "SISTEQ Control",
+          "description": "Sistema para consultoría y venta de equipos de manejo de materiales. Arquitectura robusta con múltiples relaciones entre tablas de materiales, procesos, aplicaciones y productos. Módulo de administración con carga compleja de productos (imágenes, planos, tablas). Integración con Google Merchant y Analytics para publicidad en Google Ads.",
+          "link": "https://www.sisteqcontrol.com/",
+          "image": "/projects/sisteq.webp",
+          "tags": ["ASTRO", "TAILWIND", "VITE", "NODEJS", "TYPESCRIPT", "POSTGRESQL", "AWS", "STRIPE"],
+          "featured": true
+        },
+        {
+          "title": "Estudio Steam",
+          "description": "Proyecto para un desarrollador de videojuegos para ayudarles a encontrar las tendencias de mercado en la plataforma Steam. Implementado con Python y Pandas, este proyecto ayudó a comprender mejor el comportamiento de los jugadores y las dinámicas del mercado.",
+          "link": "/es/steam",
+          "github": "https://github.com/Dexinator/steam",
+          "image": "/projects/videogames.webp",
+          "tags": ["PYTHON", "PANDAS"],
+          "featured": true
+        },
+        {
+          "title": "Entrepeques",
+          "description": "Sistema integral para tiendas de compra-venta de artículos infantiles de segunda mano. Base de datos unificada con 4 apps: valuador, POS, e-commerce y administración. Los artículos ingresan por valuación y se venden en tiendas físicas o e-commerce. Incluye gestión de usuarios y reporteo. Usuario prueba: admin/admin123",
+          "link": "https://pequeprogram-tienda-staging.vercel.app/",
+          "links": [
+            { "name": "E-commerce", "url": "https://pequeprogram-tienda-staging.vercel.app/" },
+            { "name": "Admin", "url": "https://admin-staging-henna.vercel.app/" },
+            { "name": "POS", "url": "https://pos-staging-neon.vercel.app/" },
+            { "name": "Valuador", "url": "https://pequeprogram-valuador-staging.vercel.app/" }
+          ],
+          "github": "https://github.com/Dexinator/Pequeprogram",
+          "image": "/projects/entrepeques.webp",
+          "tags": ["ASTRO", "TAILWIND", "REACT", "NODEJS", "TYPESCRIPT", "POSTGRESQL", "AWS"],
+          "featured": true
+        },
+        {
+          "title": "Regente (El Palacio Negro)",
+          "description": "Sistema modular para gestión de bar. Permite a meseros, gerentes y dueños realizar sus tareas: toma de órdenes, gestión de mesas, cobros, pedidos de cocina, reporteo de ventas y finanzas, y gestión de compras. Usuario prueba: mesera1/123456",
+          "link": "https://regente2-0-staging.vercel.app/",
+          "github": "https://github.com/Dexinator/Regente2.0",
+          "image": "/projects/regente.webp",
+          "tags": ["ASTRO", "TAILWIND", "REACT", "NODEJS", "POSTGRESQL"],
+          "featured": true
+        },
+        {
+          "title": "Santa Marta Accesible",
+          "description": "Oficina virtual de turismo para el ayuntamiento de Santa Marta de Tormes, España. Diseñado con criterios de accesibilidad para personas con dificultades visuales, auditivas y cognitivas.",
+          "link": "https://www.santamartaccesible.com/",
+          "github": "https://github.com/Dexinator/smarta_full",
+          "image": "/projects/santa_marta_accesible.webp",
+          "tags": ["ASTRO", "TAILWIND", "REACT"],
+          "featured": false
+        },
+        {
+          "title": "Isla del Soto",
+          "description": "Audioguía para el recorrido turístico de la Isla del Soto en Santa Marta de Tormes, España. Diseñada para personas con dificultades visuales, auditivas y cognitivas.",
+          "link": "https://soto.santamartaccesible.com/",
+          "github": "https://github.com/Dexinator/isla_soto2.0",
+          "image": "/projects/isla_soto.webp",
+          "tags": ["ASTRO", "TAILWIND", "REACT"],
+          "featured": false
+        },
+        {
+          "title": "Murales de Santa Marta",
+          "description": "Audioguía para el recorrido de murales urbanos en Santa Marta de Tormes, España. Accesible para personas con diferentes capacidades.",
+          "link": "https://murales.santamartaccesible.com/",
+          "github": "https://github.com/Dexinator/murales2.0",
+          "image": "/projects/murales.webp",
+          "tags": ["ASTRO", "TAILWIND", "REACT"],
+          "featured": false
+        },
+        {
+          "title": "Localización Industrial",
+          "description": "E-commerce para comercializadora de equipos de geolocalización industrial. Integración con pasarela de pago Stripe y API de Google Merchant para publicidad automatizada en Google Ads.",
+          "link": "https://localizacion-industrial.com/",
+          "github": "https://github.com/Dexinator/LocInd",
+          "image": "/projects/localizacion_industrial.webp",
+          "tags": ["ASTRO", "TAILWIND", "STRIPE"],
+          "featured": false
+        },
+        {
+          "title": "Spa para el Alma",
+          "description": "Página web para servicios de psicoterapia y terapias alternativas. Diseño enfocado en transmitir calma y profesionalismo.",
+          "link": "https://www.spaparaelalma.shop/",
+          "github": "https://github.com/Dexinator/spa-para-el-alma",
+          "image": "/projects/spaparaelalma.webp",
+          "tags": ["ASTRO", "TAILWIND"],
+          "featured": false
+        },
+        {
+          "title": "Julia Sánchez",
+          "description": "Portafolio profesional para consultora educativa. Presenta su trayectoria, servicios y proyectos de manera elegante.",
+          "link": "https://juliasanchez.mx",
+          "github": "https://github.com/Dexinator/DexJS",
+          "image": "/projects/julia.webp",
+          "tags": ["ASTRO", "TAILWIND"],
+          "featured": false
+        },
+        {
+          "title": "Portolan Consultores",
+          "description": "Sitio web para consultora especializada en exportación e importación de materiales y maquinaria industrial.",
+          "link": "https://positivus-two-gamma.vercel.app/",
+          "github": "https://github.com/Dexinator/Positivus",
+          "image": "/projects/portolan.webp",
+          "tags": ["ASTRO", "TAILWIND"],
+          "featured": false
+        },
+        {
+          "title": "La Brezosa",
+          "description": "Sitio web para casas rurales en renta en destino turístico en España. Muestra las propiedades disponibles y facilita el contacto con los propietarios.",
+          "link": "https://www.casarurallabrezosa.com/",
+          "github": "https://github.com/Dexinator/CasaRural2.0",
+          "image": "/projects/labrezosa.webp",
+          "tags": ["ASTRO", "TAILWIND"],
+          "featured": false
+        },
+        {
+          "title": "Audacetics",
+          "description": "Plataforma de servicios para crear productos digitales de turismo accesible: audioguías, recorridos guiados y experiencias inclusivas.",
+          "github": "https://github.com/Dexinator/mintaka",
+          "image": "/projects/audacetics.webp",
+          "tags": ["ASTRO", "TAILWIND"],
+          "featured": false
+        },
+        {
+          "title": "El Palacio Negro - Menú",
+          "description": "Menú digital para bar/restaurante. Todos los datos están en Markdown para facilitar la edición por usuarios sin experiencia técnica.",
+          "link": "https://elpalacionegro.com/",
+          "github": "https://github.com/Dexinator/elpalacio-menu",
+          "image": "/projects/elpalaciomenu.webp",
+          "tags": ["ASTRO", "TAILWIND"],
+          "featured": false
+        },
+        {
+          "title": "Clientes frecuentes Palacio Negro",
+          "description": "Desarrollo móvil para registrar clientes del Palacio Negro y alimentar el funnel de publicidad. Servidor PHP con almacenamiento en MySQL.",
+          "link": "https://presos.elpalacionegro.com",
+          "github": "https://github.com/Dexinator/presos",
+          "image": "/projects/presos.webp",
+          "tags": ["JS", "MYSQL", "PHP"],
+          "featured": false
+        }
+      ]
+    }
+  },
+  "en": {
+    "projects": {
+      "title": "Projects",
+      "featuredTitle": "Featured Projects",
+      "viewAll": "View all projects",
+      "allProjectsUrl": "/en/projects",
+      "labels": {
+        "code": "Code",
+        "preview": "Preview",
+        "about": "About",
+        "selectApp": "Select an app:"
+      },
+      "items": [
+        {
+          "title": "SISTEQ Control",
+          "description": "System for consulting and sales of material handling equipment. Robust architecture with multiple relationships between materials, processes, applications, and products tables. Admin module with complex product uploads (images, blueprints, tables). Google Merchant and Analytics integration for Google Ads.",
+          "link": "https://www.sisteqcontrol.com/",
+          "image": "/projects/sisteq.webp",
+          "tags": ["ASTRO", "TAILWIND", "VITE", "NODEJS", "TYPESCRIPT", "POSTGRESQL", "AWS", "STRIPE"],
+          "featured": true
+        },
+        {
+          "title": "Steam Study",
+          "description": "Project for a game developer to help them identify market trends on the Steam platform. Implemented with Python and Pandas, this project helped better understand player behavior and market dynamics.",
+          "link": "/en/steam",
+          "github": "https://github.com/Dexinator/steam",
+          "image": "/projects/videogames.webp",
+          "tags": ["PYTHON", "PANDAS"],
+          "featured": true
+        },
+        {
+          "title": "Entrepeques",
+          "description": "Comprehensive system for second-hand children's items buy-sell stores. Unified database with 4 apps: appraiser, POS, e-commerce, and admin. Items enter through appraisal and sell via physical stores or e-commerce. Includes user management and reporting. Test user: admin/admin123",
+          "link": "https://pequeprogram-tienda-staging.vercel.app/",
+          "links": [
+            { "name": "E-commerce", "url": "https://pequeprogram-tienda-staging.vercel.app/" },
+            { "name": "Admin", "url": "https://admin-staging-henna.vercel.app/" },
+            { "name": "POS", "url": "https://pos-staging-neon.vercel.app/" },
+            { "name": "Valuador", "url": "https://pequeprogram-valuador-staging.vercel.app/" }
+          ],
+          "github": "https://github.com/Dexinator/Pequeprogram",
+          "image": "/projects/entrepeques.webp",
+          "tags": ["ASTRO", "TAILWIND", "REACT", "NODEJS", "TYPESCRIPT", "POSTGRESQL", "AWS"],
+          "featured": true
+        },
+        {
+          "title": "Regente (El Palacio Negro)",
+          "description": "Modular bar management system. Enables waiters, managers, and owners to perform their tasks: order taking, table management, billing, kitchen orders, sales and finance reporting, and purchasing. Test user: mesera1/123456",
+          "link": "https://regente2-0-staging.vercel.app/",
+          "github": "https://github.com/Dexinator/Regente2.0",
+          "image": "/projects/regente.webp",
+          "tags": ["ASTRO", "TAILWIND", "REACT", "NODEJS", "POSTGRESQL"],
+          "featured": true
+        },
+        {
+          "title": "Santa Marta Accesible",
+          "description": "Virtual tourism office for Santa Marta de Tormes municipality, Spain. Designed with accessibility criteria for people with visual, auditory, and cognitive difficulties.",
+          "link": "https://www.santamartaccesible.com/",
+          "github": "https://github.com/Dexinator/smarta_full",
+          "image": "/projects/santa_marta_accesible.webp",
+          "tags": ["ASTRO", "TAILWIND", "REACT"],
+          "featured": false
+        },
+        {
+          "title": "Isla del Soto",
+          "description": "Audio guide for the Isla del Soto tourist route in Santa Marta de Tormes, Spain. Designed for people with visual, auditory, and cognitive difficulties.",
+          "link": "https://soto.santamartaccesible.com/",
+          "github": "https://github.com/Dexinator/isla_soto2.0",
+          "image": "/projects/isla_soto.webp",
+          "tags": ["ASTRO", "TAILWIND", "REACT"],
+          "featured": false
+        },
+        {
+          "title": "Murales de Santa Marta",
+          "description": "Audio guide for the urban murals route in Santa Marta de Tormes, Spain. Accessible for people with different abilities.",
+          "link": "https://murales.santamartaccesible.com/",
+          "github": "https://github.com/Dexinator/murales2.0",
+          "image": "/projects/murales.webp",
+          "tags": ["ASTRO", "TAILWIND", "REACT"],
+          "featured": false
+        },
+        {
+          "title": "Localización Industrial",
+          "description": "E-commerce for industrial geolocation equipment retailer. Integration with Stripe payment gateway and Google Merchant API for automated Google Ads advertising.",
+          "link": "https://localizacion-industrial.com/",
+          "github": "https://github.com/Dexinator/LocInd",
+          "image": "/projects/localizacion_industrial.webp",
+          "tags": ["ASTRO", "TAILWIND", "STRIPE"],
+          "featured": false
+        },
+        {
+          "title": "Spa para el Alma",
+          "description": "Website for psychotherapy and alternative therapy services. Design focused on conveying calm and professionalism.",
+          "link": "https://www.spaparaelalma.shop/",
+          "github": "https://github.com/Dexinator/spa-para-el-alma",
+          "image": "/projects/spaparaelalma.webp",
+          "tags": ["ASTRO", "TAILWIND"],
+          "featured": false
+        },
+        {
+          "title": "Julia Sánchez",
+          "description": "Professional portfolio for an educational consultant. Presents her career, services, and projects elegantly.",
+          "link": "https://juliasanchez.mx",
+          "github": "https://github.com/Dexinator/DexJS",
+          "image": "/projects/julia.webp",
+          "tags": ["ASTRO", "TAILWIND"],
+          "featured": false
+        },
+        {
+          "title": "Portolan Consultores",
+          "description": "Website for a consulting firm specialized in import/export of materials and industrial machinery.",
+          "link": "https://positivus-two-gamma.vercel.app/",
+          "github": "https://github.com/Dexinator/Positivus",
+          "image": "/projects/portolan.webp",
+          "tags": ["ASTRO", "TAILWIND"],
+          "featured": false
+        },
+        {
+          "title": "La Brezosa",
+          "description": "Website for rural vacation rentals in a tourist destination in Spain. Showcases available properties and facilitates contact with owners.",
+          "link": "https://www.casarurallabrezosa.com/",
+          "github": "https://github.com/Dexinator/CasaRural2.0",
+          "image": "/projects/labrezosa.webp",
+          "tags": ["ASTRO", "TAILWIND"],
+          "featured": false
+        },
+        {
+          "title": "Audacetics",
+          "description": "Platform for creating accessible digital tourism products: audio guides, guided tours, and inclusive experiences.",
+          "github": "https://github.com/Dexinator/mintaka",
+          "image": "/projects/audacetics.webp",
+          "tags": ["ASTRO", "TAILWIND"],
+          "featured": false
+        },
+        {
+          "title": "El Palacio Negro - Menu",
+          "description": "Digital menu for bar/restaurant. All data is in Markdown for easy editing by non-technical users.",
+          "link": "https://elpalacionegro.com/",
+          "github": "https://github.com/Dexinator/elpalacio-menu",
+          "image": "/projects/elpalaciomenu.webp",
+          "tags": ["ASTRO", "TAILWIND"],
+          "featured": false
+        },
+        {
+          "title": "Palacio Negro Frequent Customers",
+          "description": "Mobile development to register Palacio Negro customers and feed the advertising funnel. PHP server with MySQL storage.",
+          "link": "https://presos.elpalacionegro.com",
+          "github": "https://github.com/Dexinator/presos",
+          "image": "/projects/presos.webp",
+          "tags": ["JS", "MYSQL", "PHP"],
+          "featured": false
+        }
+      ]
     }
   }
+}

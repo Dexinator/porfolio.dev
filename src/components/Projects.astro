@@ -9,12 +9,30 @@ import Link from "./icons/Link.astro";
 import Icastro from "./icons/Icastro.astro";
 import Tailwind from "./icons/Tailwind.astro";
 import Docker from "./icons/Docker.astro";
+import React from "./icons/React.astro";
+import NodeJS from "./icons/NodeJS.astro";
+import PostgreSQL from "./icons/PostgreSQL.astro";
+import TypeScript from "./icons/TypeScript.astro";
+import Stripe from "./icons/Stripe.astro";
+import AWS from "./icons/AWS.astro";
+import Vite from "./icons/Vite.astro";
 import LinkButton from "./LinkButton.astro";
 import { getLangFromUrl } from 'src/i18n/utils.ts';
 import projects from 'src/texts/projects.json';
 
-const lang = getLangFromUrl(Astro.url); // Obtén el idioma de la URL
-const content = projects[lang].projects; // Accede a los proyectos en el idioma correcto
+interface Props {
+  featured?: boolean;
+  view?: "list" | "grid";
+}
+
+const { featured = false, view = "list" } = Astro.props;
+const lang = getLangFromUrl(Astro.url);
+const content = projects[lang].projects;
+
+// Filtrar proyectos según el modo
+const projectItems = featured
+  ? content.items.filter((item) => item.featured)
+  : content.items;
 
 const TAGS = {
   JS: {
@@ -42,7 +60,7 @@ const TAGS = {
     class: "bg-[#003179] text-white",
     icon: PHP,
   },
-  ICASTRO: {
+  ASTRO: {
     name: "Astro",
     class: "bg-[#FF5D01] text-white",
     icon: Icastro,
@@ -57,66 +75,589 @@ const TAGS = {
     class: "bg-[#2496ED] text-white",
     icon: Docker,
   },
+  REACT: {
+    name: "React",
+    class: "bg-[#61DAFB] text-black",
+    icon: React,
+  },
+  NODEJS: {
+    name: "Node.js",
+    class: "bg-[#339933] text-white",
+    icon: NodeJS,
+  },
+  POSTGRESQL: {
+    name: "PostgreSQL",
+    class: "bg-[#336791] text-white",
+    icon: PostgreSQL,
+  },
+  TYPESCRIPT: {
+    name: "TypeScript",
+    class: "bg-[#3178C6] text-white",
+    icon: TypeScript,
+  },
+  STRIPE: {
+    name: "Stripe",
+    class: "bg-[#635BFF] text-white",
+    icon: Stripe,
+  },
+  AWS: {
+    name: "AWS",
+    class: "bg-[#FF9900] text-black",
+    icon: AWS,
+  },
+  VITE: {
+    name: "Vite",
+    class: "bg-[#646CFF] text-white",
+    icon: Vite,
+  },
 };
 ---
 
-<div class="flex flex-col gap-y-16">
-  {
-    content.items.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-      <div class="w-full md:w-1/2">
-        <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-          <img
-          alt="Imagen Proyecto Jorge Badillo"
-          class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105"
-          loading="lazy"
-          src={image}
-          />
-        </div>
-      </div>
-      
-      <div class="w-full md:w-1/2 md:max-w-lg">
-        <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-          {title}
-        </h3>
-        <div class="flex flex-wrap mt-2">
-          <ul class="flex flex-row mb-2 gap-x-2">
-            {tags.map((tag) => {
-              const tagKey = tag as keyof typeof TAGS;
-              const IconComponent = TAGS[tagKey].icon;
-              return (
-              <li>
-                <span
-                class={`flex gap-x-2 rounded-full text-xs ${TAGS[tagKey].class} py-1 px-2`}
-                >
-                <IconComponent class="size-4" />
-                {TAGS[tagKey].name}
-              </span>
-            </li>
-            );
-          })}
-        </ul>
-        
-        <div class="mt-2 text-gray-700 dark:text-gray-400">
-          {description}
-        </div>
-        <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
-            </LinkButton>
+{view === "grid" ? (
+  <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+    {
+      projectItems.map(({ image, title, description, tags, link, links, github }, index) => (
+        <article class="group flex flex-col overflow-hidden rounded-xl border border-gray-200 dark:border-gray-800 bg-white dark:bg-gray-900/50 shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-1">
+          {links && links.length > 0 ? (
+            <button
+              type="button"
+              class="links-modal-trigger block h-40 overflow-hidden cursor-pointer text-left"
+              data-title={title}
+              data-links={JSON.stringify(links)}
+            >
+              <img
+                alt={`Proyecto: ${title}`}
+                class="object-cover object-top w-full h-full transition duration-500 group-hover:scale-105"
+                loading="lazy"
+                src={image}
+              />
+            </button>
+          ) : (
+            <a href={link} target="_blank" rel="noopener noreferrer" class="block h-40 overflow-hidden">
+              <img
+                alt={`Proyecto: ${title}`}
+                class="object-cover object-top w-full h-full transition duration-500 group-hover:scale-105"
+                loading="lazy"
+                src={image}
+              />
+            </a>
+          )}
+          <div class="flex flex-col flex-grow p-4">
+            {links && links.length > 0 ? (
+              <button
+                type="button"
+                class="links-modal-trigger block mb-3 text-left cursor-pointer"
+                data-title={title}
+                data-links={JSON.stringify(links)}
+              >
+                <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2 line-clamp-2">
+                  {title}
+                </h3>
+                <ul class="flex flex-wrap gap-1">
+                  {tags.map((tag) => {
+                    const tagKey = tag as keyof typeof TAGS;
+                    const IconComponent = TAGS[tagKey].icon;
+                    return (
+                      <li>
+                        <span class={`flex items-center gap-1 rounded-full text-xs ${TAGS[tagKey].class} py-0.5 px-2`}>
+                          <IconComponent class="size-3" />
+                          {TAGS[tagKey].name}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </button>
+            ) : (
+              <a href={link} target="_blank" rel="noopener noreferrer" class="block mb-3">
+                <h3 class="text-lg font-bold text-gray-800 dark:text-gray-100 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors mb-2 line-clamp-2">
+                  {title}
+                </h3>
+                <ul class="flex flex-wrap gap-1">
+                  {tags.map((tag) => {
+                    const tagKey = tag as keyof typeof TAGS;
+                    const IconComponent = TAGS[tagKey].icon;
+                    return (
+                      <li>
+                        <span class={`flex items-center gap-1 rounded-full text-xs ${TAGS[tagKey].class} py-0.5 px-2`}>
+                          <IconComponent class="size-3" />
+                          {TAGS[tagKey].name}
+                        </span>
+                      </li>
+                    );
+                  })}
+                </ul>
+              </a>
             )}
-            {link && (
-              <LinkButton href={link}>
-                <Link class="size-4" />
-                Preview
-              </LinkButton>
+            <footer class="flex items-center gap-3 mt-auto pt-2 border-t border-gray-100 dark:border-gray-800">
+              {github && (
+                <a
+                  href={github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-1 text-sm font-medium text-purple-600 dark:text-purple-400 hover:text-purple-800 dark:hover:text-purple-300 transition-colors"
+                >
+                  <GitHub class="size-4" />
+                  {content.labels.code}
+                </a>
               )}
+              {links && links.length > 0 ? (
+                <button
+                  type="button"
+                  class="links-modal-trigger flex items-center gap-1 text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                  data-title={title}
+                  data-links={JSON.stringify(links)}
+                >
+                  <Link class="size-3" />
+                  {content.labels.preview}
+                </button>
+              ) : link && (
+                <a
+                  href={link}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  class="flex items-center gap-1 text-sm font-medium text-blue-600 dark:text-blue-400 hover:text-blue-800 dark:hover:text-blue-300 transition-colors"
+                >
+                  <Link class="size-3" />
+                  {content.labels.preview}
+                </a>
+              )}
+              <button
+                type="button"
+                class="project-modal-trigger flex items-center gap-1 text-sm font-medium text-emerald-600 dark:text-emerald-400 hover:text-emerald-800 dark:hover:text-emerald-300 transition-colors"
+                data-title={title}
+                data-description={description}
+                data-image={image}
+                data-link={link}
+                data-links={links ? JSON.stringify(links) : ''}
+                data-github={github}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" class="size-3" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <circle cx="12" cy="12" r="10"/>
+                  <path d="M12 16v-4M12 8h.01"/>
+                </svg>
+                {content.labels.about}
+              </button>
             </footer>
           </div>
-        </div>
-      </article>
+        </article>
       ))
     }
   </div>
+) : (
+  <div class="flex flex-col gap-y-16">
+    {
+      projectItems.map(({ image, title, description, tags, link, links, github }) => (
+      <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
+        <div class="w-full md:w-1/2">
+          {links && links.length > 0 ? (
+            <button
+              type="button"
+              class="links-modal-trigger block w-full text-left cursor-pointer"
+              data-title={title}
+              data-links={JSON.stringify(links)}
+            >
+              <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                <img
+                alt={`Proyecto: ${title}`}
+                class="object-cover object-center w-full h-64 transition duration-500 md:scale-110 md:group-hover:scale-105"
+                loading="lazy"
+                src={image}
+                />
+              </div>
+            </button>
+          ) : (
+            <a href={link} target="_blank" rel="noopener noreferrer" class="block">
+              <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
+                <img
+                alt={`Proyecto: ${title}`}
+                class="object-cover object-center w-full h-64 transition duration-500 md:scale-110 md:group-hover:scale-105"
+                loading="lazy"
+                src={image}
+                />
+              </div>
+            </a>
+          )}
+        </div>
+
+        <div class="w-full md:w-1/2 md:max-w-lg">
+          {links && links.length > 0 ? (
+            <button
+              type="button"
+              class="links-modal-trigger text-left cursor-pointer"
+              data-title={title}
+              data-links={JSON.stringify(links)}
+            >
+              <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                {title}
+              </h3>
+            </button>
+          ) : (
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100 hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
+                {title}
+              </h3>
+            </a>
+          )}
+          <div class="flex flex-col gap-y-2 mt-2">
+            <ul class="flex flex-row flex-wrap gap-2">
+              {tags.slice(0, 4).map((tag) => {
+                const tagKey = tag as keyof typeof TAGS;
+                const IconComponent = TAGS[tagKey].icon;
+                return (
+                <li>
+                  <span
+                  class={`flex gap-x-2 rounded-full text-xs ${TAGS[tagKey].class} py-1 px-2`}
+                  >
+                  <IconComponent class="size-4" />
+                  {TAGS[tagKey].name}
+                </span>
+              </li>
+              );
+            })}
+          </ul>
+            {tags.length > 4 && (
+              <ul class="flex flex-row flex-wrap gap-2">
+                {tags.slice(4).map((tag) => {
+                  const tagKey = tag as keyof typeof TAGS;
+                  const IconComponent = TAGS[tagKey].icon;
+                  return (
+                  <li>
+                    <span
+                    class={`flex gap-x-2 rounded-full text-xs ${TAGS[tagKey].class} py-1 px-2`}
+                    >
+                    <IconComponent class="size-4" />
+                    {TAGS[tagKey].name}
+                  </span>
+                </li>
+                );
+              })}
+            </ul>
+            )}
+
+          <div class="mt-2 text-gray-700 dark:text-gray-400">
+            {description}
+          </div>
+          <footer class="flex items-end justify-start mt-4 gap-x-4">
+            {github && (
+              <a href={github} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-lg bg-purple-100 dark:bg-purple-900/30 text-purple-700 dark:text-purple-300 hover:bg-purple-200 dark:hover:bg-purple-900/50 transition-colors">
+                <GitHub class="size-5" />
+                {content.labels.code}
+              </a>
+            )}
+            {links && links.length > 0 ? (
+              <button
+                type="button"
+                class="links-modal-trigger inline-flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors"
+                data-title={title}
+                data-links={JSON.stringify(links)}
+              >
+                <Link class="size-4" />
+                {content.labels.preview}
+              </button>
+            ) : link && (
+              <a href={link} target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-lg bg-blue-100 dark:bg-blue-900/30 text-blue-700 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-900/50 transition-colors">
+                <Link class="size-4" />
+                {content.labels.preview}
+              </a>
+            )}
+            <button
+              type="button"
+              class="project-modal-trigger inline-flex items-center gap-2 px-3 py-2 text-sm font-medium rounded-lg bg-emerald-100 dark:bg-emerald-900/30 text-emerald-700 dark:text-emerald-300 hover:bg-emerald-200 dark:hover:bg-emerald-900/50 transition-colors"
+              data-title={title}
+              data-description={description}
+              data-image={image}
+              data-link={link}
+              data-links={links ? JSON.stringify(links) : ''}
+              data-github={github}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="M12 16v-4M12 8h.01"/>
+              </svg>
+              {content.labels.about}
+            </button>
+          </footer>
+            </div>
+          </div>
+        </article>
+        ))
+      }
+    </div>
+)}
+
+{featured && (
+  <div class="flex justify-center mt-12">
+    <a
+      href={content.allProjectsUrl}
+      class="inline-flex items-center gap-2 px-6 py-3 text-base font-medium transition-colors rounded-lg bg-gray-100 dark:bg-gray-800 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-700"
+    >
+      {content.viewAll}
+      <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M5 12h14M12 5l7 7-7 7"/>
+      </svg>
+    </a>
+  </div>
+)}
+
+<!-- Links Selection Modal -->
+<div id="links-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+  <div class="relative w-full max-w-md bg-white dark:bg-gray-900 rounded-2xl shadow-2xl p-6">
+    <!-- Close button -->
+    <button
+      type="button"
+      id="links-modal-close"
+      class="absolute top-4 right-4 z-10 p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <h3 id="links-modal-title" class="text-xl font-bold text-gray-800 dark:text-gray-100 mb-2"></h3>
+    <p class="text-gray-600 dark:text-gray-400 mb-6">{content.labels.selectApp}</p>
+
+    <!-- Links container -->
+    <div id="links-modal-container" class="flex flex-col gap-3"></div>
+  </div>
+</div>
+
+<!-- About Modal -->
+<div id="project-modal" class="fixed inset-0 z-50 hidden items-center justify-center p-4 bg-black/60 backdrop-blur-sm">
+  <div class="relative w-full max-w-2xl max-h-[90vh] overflow-auto bg-white dark:bg-gray-900 rounded-2xl shadow-2xl">
+    <!-- Close button -->
+    <button
+      type="button"
+      id="modal-close"
+      class="absolute top-4 right-4 z-10 p-2 rounded-full bg-gray-100 dark:bg-gray-800 text-gray-600 dark:text-gray-400 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+    >
+      <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M18 6L6 18M6 6l12 12"/>
+      </svg>
+    </button>
+
+    <!-- Modal image -->
+    <div class="relative h-48 sm:h-64 overflow-hidden rounded-t-2xl">
+      <img
+        id="modal-image"
+        alt=""
+        class="object-cover object-top w-full h-full"
+      />
+    </div>
+
+    <!-- Modal content -->
+    <div class="p-6">
+      <h3 id="modal-title" class="text-2xl font-bold text-gray-800 dark:text-gray-100 mb-4"></h3>
+      <p id="modal-description" class="text-gray-600 dark:text-gray-400 leading-relaxed mb-6"></p>
+
+      <!-- Modal actions -->
+      <div class="flex flex-wrap gap-3">
+        <!-- Single preview link (hidden when multiple links exist) -->
+        <a
+          id="modal-preview"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors"
+        >
+          <svg xmlns="http://www.w3.org/2000/svg" class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+          </svg>
+          {content.labels.preview}
+        </a>
+        <!-- Multiple links container -->
+        <div id="modal-links" class="contents"></div>
+        <a
+          id="modal-github"
+          href="#"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-purple-600 text-white hover:bg-purple-700 transition-colors"
+        >
+          <GitHub class="size-4" />
+          {content.labels.code}
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function initProjectModals() {
+    // ========== Links Selection Modal ==========
+    const linksModal = document.getElementById('links-modal');
+    const linksModalClose = document.getElementById('links-modal-close');
+    const linksModalTitle = document.getElementById('links-modal-title');
+    const linksModalContainer = document.getElementById('links-modal-container');
+
+    const closeLinksModal = () => {
+      if (linksModal) {
+        linksModal.classList.add('hidden');
+        linksModal.classList.remove('flex');
+        document.body.style.overflow = '';
+      }
+    };
+
+    // Open links modal
+    document.querySelectorAll('.links-modal-trigger').forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const btn = e.currentTarget as HTMLElement;
+        const title = btn.dataset.title || '';
+        const linksData = btn.dataset.links || '';
+
+        if (linksModalTitle) linksModalTitle.textContent = title;
+        if (linksModalContainer) linksModalContainer.innerHTML = '';
+
+        if (linksData) {
+          try {
+            const links = JSON.parse(linksData);
+            if (Array.isArray(links) && links.length > 0) {
+              links.forEach((linkItem: { name: string; url: string }) => {
+                const linkEl = document.createElement('a');
+                linkEl.href = linkItem.url;
+                linkEl.target = '_blank';
+                linkEl.rel = 'noopener noreferrer';
+                linkEl.className = 'flex items-center justify-between px-4 py-3 text-base font-medium rounded-lg bg-blue-50 dark:bg-blue-900/20 text-blue-700 dark:text-blue-300 hover:bg-blue-100 dark:hover:bg-blue-900/40 transition-colors border border-blue-200 dark:border-blue-800';
+                linkEl.innerHTML = `
+                  <span>${linkItem.name}</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" class="size-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                  </svg>
+                `;
+                linksModalContainer?.appendChild(linkEl);
+              });
+            }
+          } catch (err) {
+            // Invalid JSON, ignore
+          }
+        }
+
+        if (linksModal) {
+          linksModal.classList.remove('hidden');
+          linksModal.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    linksModalClose?.addEventListener('click', closeLinksModal);
+    linksModal?.addEventListener('click', (e) => {
+      if (e.target === linksModal) closeLinksModal();
+    });
+
+    // ========== About Modal ==========
+    const modal = document.getElementById('project-modal');
+    const modalClose = document.getElementById('modal-close');
+    const modalImage = document.getElementById('modal-image') as HTMLImageElement;
+    const modalTitle = document.getElementById('modal-title');
+    const modalDescription = document.getElementById('modal-description');
+    const modalPreview = document.getElementById('modal-preview') as HTMLAnchorElement;
+    const modalLinks = document.getElementById('modal-links');
+    const modalGithub = document.getElementById('modal-github') as HTMLAnchorElement;
+
+    if (!modal) return;
+
+    // Open modal
+    document.querySelectorAll('.project-modal-trigger').forEach(trigger => {
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+
+        const btn = e.currentTarget as HTMLElement;
+        const title = btn.dataset.title || '';
+        const description = btn.dataset.description || '';
+        const image = btn.dataset.image || '';
+        const link = btn.dataset.link || '';
+        const linksData = btn.dataset.links || '';
+        const github = btn.dataset.github || '';
+
+        if (modalImage) modalImage.src = image;
+        if (modalTitle) modalTitle.textContent = title;
+        if (modalDescription) modalDescription.textContent = description;
+
+        // Clear previous multiple links
+        if (modalLinks) modalLinks.innerHTML = '';
+
+        // Check if multiple links exist
+        let hasMultipleLinks = false;
+        if (linksData) {
+          try {
+            const links = JSON.parse(linksData);
+            if (Array.isArray(links) && links.length > 0) {
+              hasMultipleLinks = true;
+              links.forEach((linkItem: { name: string; url: string }) => {
+                const linkEl = document.createElement('a');
+                linkEl.href = linkItem.url;
+                linkEl.target = '_blank';
+                linkEl.rel = 'noopener noreferrer';
+                linkEl.className = 'inline-flex items-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition-colors';
+                linkEl.innerHTML = `
+                  <svg xmlns="http://www.w3.org/2000/svg" class="size-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6M15 3h6v6M10 14L21 3"/>
+                  </svg>
+                  ${linkItem.name}
+                `;
+                modalLinks?.appendChild(linkEl);
+              });
+            }
+          } catch (err) {
+            // Invalid JSON, ignore
+          }
+        }
+
+        // Show/hide single preview vs multiple links
+        if (modalPreview) {
+          if (hasMultipleLinks) {
+            modalPreview.style.display = 'none';
+          } else {
+            modalPreview.href = link;
+            modalPreview.style.display = link ? 'inline-flex' : 'none';
+          }
+        }
+
+        if (modalGithub) {
+          modalGithub.href = github;
+          modalGithub.style.display = github ? 'inline-flex' : 'none';
+        }
+
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      });
+    });
+
+    // Close modal
+    const closeModal = () => {
+      modal.classList.add('hidden');
+      modal.classList.remove('flex');
+      document.body.style.overflow = '';
+    };
+
+    modalClose?.addEventListener('click', closeModal);
+
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) closeModal();
+    });
+
+    // Global escape key handler for both modals
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        if (linksModal && !linksModal.classList.contains('hidden')) {
+          closeLinksModal();
+        }
+        if (modal && !modal.classList.contains('hidden')) {
+          closeModal();
+        }
+      }
+    });
+  }
+
+  // Initialize on page load
+  initProjectModals();
+
+  // Re-initialize on Astro page transitions
+  document.addEventListener('astro:after-swap', initProjectModals);
+</script>

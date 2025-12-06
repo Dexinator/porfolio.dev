@@ -44,9 +44,9 @@ const lang = getLangFromUrl(Astro.url);
     <SectionContainer id="proyectos">
       <TitleSection>
         <CodeIcon class="size-7" />
-        Projects
+        Featured Projects
       </TitleSection>
-      <Projects lang={lang}/>
+      <Projects featured={true} />
     </SectionContainer>
 
     <SectionContainer id="sobre-mi">

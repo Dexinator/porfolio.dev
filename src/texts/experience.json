@@ -7,25 +7,25 @@
             "date": "Dic. 2019 - Dic. 2024",
             "title": "Emprendedor",
             "company": "Guteté",
-            "description": "Ayudé a pequeñas y medianas empresas a tomar decisiones basadas en datos. He liderado equipos de hasta 8 profesionistas de diferentes áreas para crear soluciones integrales, trabajé mucho con e-commerce PHP, Python y SQL."
+            "description": "Consultor para PyMEs, gobierno y fundaciones. Diseñé arquitecturas completas (PostgreSQL, Node.js, Astro) e integré servicios como AWS S3 y Stripe. Lideré equipos de hasta 8 profesionistas."
           },
           {
             "date": "Ago. 2019 - Ago. 2020",
             "title": "Auditor externo",
             "company": "Ernst & Young",
-            "description": "Colaboré en auditorías para garantizar la transparencia de grandes corporaciones. Desarrollé soluciones tecnológicas que mejoraron la seguridad operativa y optimizaron procesos clave, trabajé con R, VBA y Oracle ERP."
+            "description": "Auditorías para garantizar transparencia en grandes corporaciones. Desarrollé soluciones tecnológicas para seguridad operativa y optimización de procesos con R, VBA y Oracle ERP."
           },
           {
             "date": "Ene. 2019 - Jul. 2019",
             "title": "Project Manager",
             "company": "Carbomex",
-            "description": "Lideré el desarrollo de software de análisis financiero para prever tendencias de mercado. Mi trabajo contribuyó al éxito de la valuación y venta de la empresa. Desarrollé habilidades de comunicación y trabajé con Tensorflow."
+            "description": "Lideré desarrollo de software de análisis financiero para predecir tendencias de mercado con TensorFlow. Mi trabajo contribuyó al éxito en la valuación y venta de la empresa."
           },
           {
             "date": "Ago. 2018 - Mar. 2019",
             "title": "Finance Intern",
             "company": "Provident",
-            "description": "Automaticé procesos de reporte financiero, ahorrando tiempo y recursos significativos. Diseñé modelos de proyección para mejorar la gestión de clientes en mora. Utilicé VBA y R."
+            "description": "Automaticé el 70% de los procesos de reporte financiero con VBA y R. Diseñé modelos de proyección para gestión de clientes en mora."
           }
         ]
       }
@@ -38,25 +38,25 @@
             "date": "Dec. 2019 - Dec. 2024",
             "title": "Entrepreneur",
             "company": "Guteté",
-            "description": "Helped small and medium-sized businesses make data-driven decisions. Led teams of up to 8 professionals from different areas to create comprehensive solutions, worked extensively with e-commerce PHP, Python, and SQL."
+            "description": "Consultant for SMEs, government, and foundations. Designed complete architectures (PostgreSQL, Node.js, Astro) and integrated services like AWS S3 and Stripe. Led teams of up to 8 professionals."
           },
           {
             "date": "Aug. 2019 - Aug. 2020",
             "title": "External Auditor",
             "company": "Ernst & Young",
-            "description": "Collaborated in audits to ensure transparency for large corporations. Developed technological solutions that improved operational security and optimized key processes, worked with R, VBA, and Oracle ERP."
+            "description": "Audits to ensure transparency in large corporations. Developed technological solutions for operational security and process optimization using R, VBA, and Oracle ERP."
           },
           {
             "date": "Jan. 2019 - Jul. 2019",
             "title": "Project Manager",
             "company": "Carbomex",
-            "description": "Led the development of financial analysis software to predict market trends. My work contributed to the successful valuation and sale of the company. Developed communication skills and worked with Tensorflow."
+            "description": "Led development of financial analysis software to predict market trends using TensorFlow. My work contributed to the successful valuation and sale of the company."
           },
           {
             "date": "Aug. 2018 - Mar. 2019",
             "title": "Finance Intern",
             "company": "Provident",
-            "description": "Automated financial reporting processes, saving significant time and resources. Designed projection models to improve the management of delinquent clients. Used VBA and R."
+            "description": "Automated 70% of financial reporting processes using VBA and R. Designed projection models for delinquent client management."
           }
         ]
       }
