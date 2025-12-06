@@ -1,10 +1,10 @@
 {
     "es": {
       "hero": {
-        "personalImageAlt": "Miguel Ángel",
+        "personalImageAlt": "Jorge Badillo",
         "badge": "Disponible para trabajar",
         "title": "Jorge Badillo",
-        "description": "5 años de experiencia.<br> <strong>Lic. en Actuaría y Científico de Datos</strong> de CDMX, México 🇲🇽. Especializado en análisis de datos, automatización de procesos y gestión de proyectos técnicos.",
+        "description": "5 años de experiencia.<br> <strong>Desarrollador Full-stack y Analista de Datos</strong> de CDMX, México 🇲🇽. Especializado en crear soluciones web con Astro, Node.js, PostgreSQL y Docker, integrando análisis de datos para la toma de decisiones.",
         "contact": {
           "email": {
             "text": "Contáctame",
@@ -19,10 +19,10 @@
     },
     "en": {
       "hero": {
-        "personalImageAlt": "Miguel Ángel",
+        "personalImageAlt": "Jorge Badillo",
         "badge": "Available for work",
         "title": "Jorge Badillo",
-        "description": "5 years of experience.<br> <strong>Bachelor's in Actuarial Science and Data Scientist</strong> from Mexico City, Mexico 🇲🇽. Specialized in data analysis, process automation, and technical project management.",
+        "description": "5 years of experience.<br> <strong>Full-stack Developer & Data Analyst</strong> from Mexico City, Mexico 🇲🇽. Specialized in building web solutions with Astro, Node.js, PostgreSQL, and Docker, integrating data analysis for decision-making.",
         "contact": {
           "email": {
             "text": "Contact me",

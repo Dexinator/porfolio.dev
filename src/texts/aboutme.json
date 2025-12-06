@@ -1,72 +1,74 @@
 {
     "es": {
       "introduction": {
-        "presentation": "Me llamo Jorge y me encantan las matemáticas. Comencé a programar en Pascal a los 12 años, haciendo calculadoras de ecuaciones multivariables. Actualmente, estoy especializado en ",
-        "focus1": "analizar datos ",
-        "middle": " de problemas complejos",
-        "focus2": " planteando las preguntas correctas."
+        "presentation": "Me llamo Jorge y me encantan las matemáticas. Comencé a programar en Pascal a los 12 años. Hoy desarrollo soluciones web completas y estoy especializado en ",
+        "focus1": "construir sistemas integrales ",
+        "middle": " que resuelven",
+        "focus2": " problemas reales de negocio."
       },
       "successes": {
         "title": "Algunos de mis éxitos incluyen:",
         "item1": {
-          "part1": "Incrementar la recompra de ",
-          "strong1": "Entrepeques en un 25%",
-          "part2": " a través de encuestas digitales."
+          "part1": "",
+          "strong1": "4 apps integradas",
+          "part2": " con base de datos unificada: ",
+          "strong2": "Entrepeques"
         },
         "item2": {
-          "part1": "Desarrollar un CRM, actualmente con ",
-          "strong1": "+300 clientes",
-          "part2": ", para ",
-          "strong2": "El Palacio Negro"
+          "part1": "Arquitectura con ",
+          "strong1": "relaciones complejas",
+          "part2": " entre tablas: ",
+          "strong2": "SISTEQ Control"
         },
         "item3": {
-          "part1": "Automatizar en ",
-          "strong1": "70%",
-          "part2": " el área de reporting en ",
-          "strong2": "Provident"
+          "part1": "Sistema modular para ",
+          "strong1": "operación completa",
+          "part2": " de bares/restaurantes: ",
+          "strong2": "Regente"
         }
       },
       "entrepreneurship": {
-        "part1": "Como emprendedor, he trabajado con empresas pequeñas y medianas, construyendo ",
-        "strong1": "modelos de predicción y automatizando sus procesos de venta ecommerce",
-        "part2": ", con lenguajes de programación como ",
-        "strong2": "Python, PHP, VBA, R y SQL.",
-        "part3": "Mi objetivo es implementar soluciones basadas en datos con la mejor tecnología disponible."
+        "part1": "Como desarrollador freelance, he trabajado con PyMEs, gobierno y fundaciones, creando ",
+        "strong1": "sistemas integrales de e-commerce y gestión",
+        "part2": ", con tecnologías como ",
+        "strong2": "Astro, Node.js, PostgreSQL, AWS y Stripe.",
+        "part3": " Integro herramientas de IA en mi flujo de trabajo. Busco aportar mi experiencia a un equipo técnico mientras continúo especializándome."
       }
     },
     "en": {
       "introduction": {
-        "presentation": "My name is Jorge, and I am passionate about mathematics. I started programming in Pascal at the age of 12, creating multivariable equation calculators. Currently, I specialize in ",
-        "focus1": "analyzing data ",
-        "middle": " from complex problems",
-        "focus2": " by asking the right questions."
+        "presentation": "My name is Jorge, and I am passionate about mathematics. I started programming in Pascal at age 12. Today I build complete web solutions and specialize in ",
+        "focus1": "building integral systems ",
+        "middle": " that solve",
+        "focus2": " real business problems."
       },
       "successes": {
         "title": "Some of my achievements include:",
         "item1": {
-          "part1": "Increasing repurchase rates for ",
-          "strong1": "Entrepeques by 25%",
-          "part2": " through digital surveys."
+          "part1": "",
+          "strong1": "4 integrated apps",
+          "part2": " with unified database: ",
+          "strong2": "Entrepeques"
         },
         "item2": {
-          "part1": "Developing a CRM, currently with ",
-          "strong1": "+300 clients",
-          "part2": ", for ",
-          "strong2": "El Palacio Negro"
+          "part1": "Architecture with ",
+          "strong1": "complex relationships",
+          "part2": " between tables: ",
+          "strong2": "SISTEQ Control"
         },
         "item3": {
-          "part1": "Automating ",
-          "strong1": "70%",
-          "part2": " of the reporting area at ",
-          "strong2": "Provident"
+          "part1": "Modular system for ",
+          "strong1": "complete operation",
+          "part2": " of bars/restaurants: ",
+          "strong2": "Regente"
         }
       },
       "entrepreneurship": {
-        "part1": "As an entrepreneur, I have worked with small and medium-sized businesses, building ",
-        "strong1": "prediction models and automating their ecommerce sales processes",
-        "part2": ", using programming languages such as ",
-        "strong2": "Python, PHP, VBA, R, and SQL.",
-        "part3": "My goal is to implement data-driven solutions using the best available technology."
+        "part1": "As a freelance developer, I have worked with SMEs, government, and foundations, building ",
+        "strong1": "integral e-commerce and management systems",
+        "part2": ", using technologies like ",
+        "strong2": "Astro, Node.js, PostgreSQL, AWS, and Stripe.",
+        "part3": " I integrate AI tools into my workflow. I seek to contribute my experience to a technical team while continuing to specialize."
       }
     }
   }

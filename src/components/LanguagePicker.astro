@@ -1,17 +1,21 @@
 ---
 import { languages } from '../i18n/ui';
+import { getTranslatedPath } from '../i18n/utils';
+
+const esPath = getTranslatedPath(Astro.url, 'es');
+const enPath = getTranslatedPath(Astro.url, 'en');
 ---
 <ul class="flex items-center justify-center gap-2 text-4xl">
     <!-- Bandera de México -->
     <li>
-      <a href="/es/" aria-label="Cambiar a español">🇲🇽</a>
+      <a href={esPath} aria-label="Cambiar a español">🇲🇽</a>
     </li>
-  
+
     <!-- Separador -->
     <li class="text-gray-400">|</li>
-  
+
     <!-- Bandera de Reino Unido -->
     <li>
-      <a href="/en/" aria-label="Switch to English">🇬🇧</a>
+      <a href={enPath} aria-label="Switch to English">🇬🇧</a>
     </li>
   </ul>
