@@ -1,7 +1,7 @@
 ---
 import Layout from "@/layouts/Layout.astro"
 import CodeIcon from "@/components/icons/Code.astro"
-import Projects from "@/components/Projects.astro"
+import ProjectsComponent from "@/components/Projects.astro"
 import SectionContainer from "@/components/SectionContainer.astro"
 import TitleSection from "@/components/TitleSection.astro"
 import LanguagePicker from "@/components/LanguagePicker.astro"
@@ -18,7 +18,7 @@ import LanguagePicker from "@/components/LanguagePicker.astro"
         <CodeIcon class="size-7" />
         All Projects
       </TitleSection>
-      <Projects view="grid" />
+      <ProjectsComponent view="grid" />
     </SectionContainer>
   </main>
 </Layout>
