@@ -4,7 +4,11 @@
         "personalImageAlt": "Jorge Badillo",
         "badge": "Disponible para trabajar",
         "title": "Jorge Badillo",
+<<<<<<< HEAD
         "description": "5 años de experiencia.<br> <strong>Desarrollador Full-stack y Analista de Datos</strong> de CDMX, México 🇲🇽. Especializado en crear soluciones web con Astro, Node.js, PostgreSQL y Docker, integrando análisis de datos para la toma de decisiones.",
+=======
+        "description": "5 años de experiencia.<br> <strong>Desarrollador Full-stack y Analista de Datos</strong> de CDMX, México 🇲🇽. Especializado en crear soluciones web con Astro, Node.js y PostgreSQL, integrando análisis de datos para la toma de decisiones.",
+>>>>>>> a60ef605a02c7bb6d8c1fc3a118ad851386b8f63
         "contact": {
           "email": {
             "text": "Contáctame",
@@ -22,7 +26,11 @@
         "personalImageAlt": "Jorge Badillo",
         "badge": "Available for work",
         "title": "Jorge Badillo",
+<<<<<<< HEAD
         "description": "5 years of experience.<br> <strong>Full-stack Developer & Data Analyst</strong> from Mexico City, Mexico 🇲🇽. Specialized in building web solutions with Astro, Node.js, PostgreSQL, and Docker, integrating data analysis for decision-making.",
+=======
+        "description": "5 years of experience.<br> <strong>Full-stack Developer & Data Analyst</strong> from Mexico City, Mexico 🇲🇽. Specialized in building web solutions with Astro, Node.js, and PostgreSQL, integrating data analysis for decision-making.",
+>>>>>>> a60ef605a02c7bb6d8c1fc3a118ad851386b8f63
         "contact": {
           "email": {
             "text": "Contact me",
